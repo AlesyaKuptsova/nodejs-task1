@@ -1,4 +1,5 @@
 function encrypt(text, shift) {
+  shift = normalizeShift(shift);
   let result = "";
   for (let i = 0; i < text.length; i++) {
     let characterCode = text.charCodeAt(i);
@@ -17,4 +18,13 @@ function decriptionShift(shift) {
   return (26 - shift) % 26;
 }
 
-module.exports = { encrypt, decriptionShift };
+function normalizeShift(shift) {
+  if(shift >= 26) {
+    shift = shift % 26;
+  }else if(shift <= -1) {
+    shift = (26 + shift % 26);
+  }
+  return shift;
+}
+
+module.exports = { encrypt, decriptionShift, normalizeShift };

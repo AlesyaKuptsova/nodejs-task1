@@ -1,13 +1,13 @@
 const fs = require("fs");
 const consoleArguments = require("./modules/console_arguments");
 const caesarStream = require("./modules/caesar_stream");
-const { decriptionShift } = require("./modules/caesar_cipher");
+const { decriptionShift, normalizeShift } = require("./modules/caesar_cipher");
 
 const args = consoleArguments.parseArguments();
 
 let source;
 if (args.inputFile) {
-   source = fs.createReadStream(args.inutFile);
+   source = fs.createReadStream(args.inputFile);
 } else {
   source = process.stdin;
 }
@@ -19,7 +19,7 @@ if (args.outputFile) {
    target = process.stdout;
  }
 
- let shift = args.shift;
+ let shift = normalizeShift(args.shift);
  if (args.action == "decode") {
     shift = decriptionShift(shift);
  }

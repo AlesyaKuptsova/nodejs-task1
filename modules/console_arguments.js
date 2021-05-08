@@ -1,10 +1,10 @@
 const { program } = require("commander");
 
 program
-  .option("-s, --shift [number]", "a shift", parseInt)
+  .requiredOption("-s, --shift <number>", "a shift", parseInt)
+  .requiredOption("-a, --action <string>", "an action encode/decode") //TODO: check encode or decode
   .option("-i, --input [string]", "an input file")
-  .option("-o, --output [string]", "an output file")
-  .option("-a, --action [string]", "an action encode/decode"); //TODO: check encode or decode
+  .option("-o, --output [string]", "an output file");
 
 function parseArguments() {
   program.parse();
