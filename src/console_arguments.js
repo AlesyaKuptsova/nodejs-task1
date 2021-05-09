@@ -17,8 +17,16 @@ function parseArguments() {
   };
 }
 
+function filterInt(value) {
+  if (/^[-+]?(\d+)$/.test(value)) {
+    return Number(value)
+  } else {
+    return NaN
+  }
+}
+
 function parseIntFail(value) {
-  const parsedValue = parseInt(value, 10);
+  const parsedValue = filterInt(value);
   if (isNaN(parsedValue)) {
     throw new InvalidOptionArgumentError("Not a number");
   }

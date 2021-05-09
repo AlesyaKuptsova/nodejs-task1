@@ -20,24 +20,6 @@ Caesar cipher CLI tool accept 4 options (short alias and full name):
 The **action** option take the value: **encode** or **decode** where **encode** means *encrypt* and **decode** means *decrypt*.
 
 The **shift** option is a integer. It can be a positive or negative integer.
-### Example to use **shift**:
-
-```bash
-$ node caesar -a decode -s 7
-```
-> console input:
-> `AaBbZz`
-> console output:
-> `TtUuSs`
-
-```bash
-$ node caesar -a decode --shift=-7
-```
-> console input:
-> `AaBbZz`
-> console output:
-> `HhIiGg`
-
 ### Important! When you use *shift* with negative integer you can use these construction **--shift=-integer** or **--shift -integer**.
 
 **action** and **shift** options are required, if one of them missed you can see error message.
@@ -228,5 +210,10 @@ $ node caesar --action encode --shift a1a --input input.txt --output output.txt
 > console output:
 >`error: option '-s, --shift <number>' argument 'a1a' is invalid. Not a number`
 
+```bash
+$ node caesar --action encode --shift 1a --input input.txt --output output.txt
+```
+> console output:
+>`error: option '-s, --shift <number>' argument '1a' is invalid. Not a number`
 
 
