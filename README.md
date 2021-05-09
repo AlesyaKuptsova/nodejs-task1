@@ -20,7 +20,7 @@ Caesar cipher CLI tool accept 4 options (short alias and full name):
 The **action** option take the value: **encode** or **decode** where **encode** means *encrypt* and **decode** means *decrypt*.
 
 The **shift** option is a integer. It can be a positive or negative integer.
-### Important! When you use *shift* with negative integer you can use these construction **--shift=-integer** or **--shift -integer**.
+##### Important! When you use *shift* with negative integer you can use these construction **--shift=-integer** or **--shift -integer**.
 
 **action** and **shift** options are required, if one of them missed you can see error message.
 
@@ -28,8 +28,7 @@ If the input and/or output file is given but doesn't exist or you can't read it 
 For encoding/decoding, please, use only the English alphabet, all other characters will be kept untouched.
 If the text is entered from the console, then the program does not terminate after the encryption / decryption of the entered text is completed, you can enter more text.
 To exit the tool press *ctrl+C* or *ctrl+D*.
-
-**Usage example:**
+### Examples:
 1. _-a (--action)_ is **encode**
 
 ```bash
