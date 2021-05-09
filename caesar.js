@@ -14,7 +14,7 @@ if (args.inputFile) {
 
 let target;
 if (args.outputFile) {
-   target = fs.createWriteStream(args.outputFile, { flags: "a" });
+   target = fs.createWriteStream(args.outputFile, { flags: fs.constants.O_APPEND | fs.constants.O_RDWR });
  } else {
    target = process.stdout;
  }

@@ -1,7 +1,7 @@
 const { program, InvalidOptionArgumentError } = require("commander");
 
 program
-  .requiredOption("-s, --shift <number>", "a shift", parseInt)
+  .requiredOption("-s, --shift <number>", "a shift", parseIntFail)
   .requiredOption("-a, --action <string>", "an action encode/decode", parseAction)
   .option("-i, --input [string]", "an input file")
   .option("-o, --output [string]", "an output file");
@@ -15,6 +15,15 @@ function parseArguments() {
     'action': options.action,
     'shift': options.shift,
   }
+}
+
+
+function parseIntFail(value) {
+  const parsedValue = parseInt(value, 10);
+  if (isNaN(parsedValue)) {
+    throw new InvalidOptionArgumentError('Not a number.');
+  }
+  return parsedValue;
 }
 
 function parseAction(value) {

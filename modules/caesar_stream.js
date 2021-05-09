@@ -12,7 +12,7 @@ function encryptStream(inputStream, outputStream, shift) {
   pipeline(inputStream, encodeTransform, outputStream, (err) => {
     if (err) {
       process.stderr.write(err.message + "\n");
-      process.exit(1);
+      process.exit(2);
     }
   });
 }
