@@ -167,7 +167,7 @@ $ node caesar -i "./input.txt" -o "./output.txt"
 > console output:
 > `error: required option '-s, --shift <number>' not specified`
 
-8. _The shift can more than 26_`
+8. _The shift can be more than 26_
 
 ```bash
 $ node caesar --action encode --shift 52 --input input.txt --output output.txt
