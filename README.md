@@ -4,10 +4,11 @@ This is tool that will encode and decode a text(English alphabet) by Caesar ciph
 
 ## How to install tool
 
-1. Download tool from this repository.
-2. Run the command line and go to the tool folder.
-3. Enter the command "npm install" or "npm i" and wait for the dependency installation process to complate.
-4. Now you can use tool.
+1. Download tool from this repository (git clone 'git@github.com:AlesyaKuptsova/nodejs-task1.git').
+2. Run the command line and go to the tool folder - nodejs-task1.
+3. Switch to caesar-cipher branch (git checkout caesar-cipher).
+4. Enter the command "npm install" or "npm i" and wait for the dependency installation process to complate.
+5. Now you can use tool.
 
 ## How to work with tool
 
