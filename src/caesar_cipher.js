@@ -5,7 +5,9 @@ const firstUpperLetterCharCode = "A".charCodeAt(0);
 const lastUpperLetterCharCode = firstUpperLetterCharCode + (cipherMod - 1);
 
 function shiftCharacter(charCode, shift, firstLetterCharCode) {
-  return ((charCode - firstLetterCharCode + shift) % cipherMod) + firstLetterCharCode;
+  return (
+    ((charCode - firstLetterCharCode + shift) % cipherMod) + firstLetterCharCode
+  );
 }
 
 function encrypt(text, shift) {
@@ -17,12 +19,16 @@ function encrypt(text, shift) {
       characterCode >= firstUpperLetterCharCode &&
       characterCode <= lastUpperLetterCharCode
     ) {
-      result += String.fromCharCode(shiftCharacter(characterCode, shift, firstUpperLetterCharCode));
+      result += String.fromCharCode(
+        shiftCharacter(characterCode, shift, firstUpperLetterCharCode)
+      );
     } else if (
       characterCode >= firstLowerLetterCharCode &&
       characterCode <= lastLowerLetterCharCode
     ) {
-      result += String.fromCharCode(shiftCharacter(characterCode, shift, firstLowerLetterCharCode));
+      result += String.fromCharCode(
+        shiftCharacter(characterCode, shift, firstLowerLetterCharCode)
+      );
     } else {
       result += text.charAt(i);
     }

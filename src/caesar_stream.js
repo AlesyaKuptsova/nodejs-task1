@@ -7,7 +7,7 @@ function encryptStream(inputStream, outputStream, shift) {
     transform(chunk, encoding, callback) {
       this.push(encrypt(chunk.toString(), shift));
       callback();
-    }
+    },
   });
   pipeline(inputStream, encodeTransform, outputStream, (err) => {
     if (err) {

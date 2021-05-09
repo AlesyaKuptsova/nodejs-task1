@@ -10,25 +10,26 @@ function parseArguments() {
   program.parse();
   const options = program.opts();
   return {
-    'inputFile': options.input,
-    'outputFile': options.output,
-    'action': options.action,
-    'shift': options.shift,
-  }
+    inputFile: options.input,
+    outputFile: options.output,
+    action: options.action,
+    shift: options.shift,
+  };
 }
-
 
 function parseIntFail(value) {
   const parsedValue = parseInt(value, 10);
   if (isNaN(parsedValue)) {
-    throw new InvalidOptionArgumentError('Not a number.');
+    throw new InvalidOptionArgumentError("Not a number");
   }
   return parsedValue;
 }
 
 function parseAction(value) {
-  if (value !== 'encode' && value !== 'decode') {
-    throw new InvalidOptionArgumentError('action should be only "encode" or "decode"');
+  if (value !== "encode" && value !== "decode") {
+    throw new InvalidOptionArgumentError(
+      'action should be only "encode" or "decode"'
+    );
   }
   return value;
 }
